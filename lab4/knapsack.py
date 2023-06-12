@@ -13,7 +13,7 @@ def get_strings(n):
 
 def Brute_Force_01Knapsack(p,w,m):
     assert len(p) == len(w)     # here p and w are array of weights and profit whose number should be equal
-    n = len(p)
+    n = len(p)  
     bit_strings = get_strings(n)
     maxProfit = 0
     solution = ''
@@ -21,8 +21,8 @@ def Brute_Force_01Knapsack(p,w,m):
         profit = sum([int(s[i]) *p[i] for i in range(n)] )
         weight = sum([int(s[i])* w[i] for i in range(n)] )
     
-        if weight <= m and profit > maxProfit:
-            maxProfit = profit
+        if weight <= m and profit > maxProfit: # for all possible combination check whether weight is smaller than max. knapsack
+            maxProfit = profit                  # and profit is maximum
             solution = s
 
     return(solution,maxProfit)
